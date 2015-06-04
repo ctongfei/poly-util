@@ -4,7 +4,7 @@ version := "0.1.0-SNAPSHOT"
 
 organization := "me.tongfei"
 
-scalaVersion := "2.11.4"
+scalaVersion := "2.11.6"
 
 libraryDependencies += "org.scala-lang" % "scala-reflect" % "2.11.6"
 

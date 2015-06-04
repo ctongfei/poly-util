@@ -82,7 +82,7 @@ object MacroImpl {
     var r: Tree = null
     c.macroApplication match {
       case q"$_.range2XRange($range).opt.foreach[$ty]($f)" => r = range
-      //case _ => c.error(c.enclosingPosition, "illegal position for macro")
+      case _ => c.error(c.enclosingPosition, "Illegal position for macro")
     }
 
     val tree: Tree = r match {
