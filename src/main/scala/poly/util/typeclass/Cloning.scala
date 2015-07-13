@@ -5,8 +5,9 @@ import scala.reflect._
 
 /**
  * @author Tongfei Chen (ctongfei@gmail.com).
+ * @since 0.1.0
  */
-trait Cloning[@sp(fdib) T] {
+trait Cloning[@sp T] {
 
   def clone(x: T): T
 
@@ -14,12 +15,28 @@ trait Cloning[@sp(fdib) T] {
 
 object Cloning {
 
-  def create[T](cl: T => T): Cloning[T] = new Cloning[T] {
+  def create[@sp T](cl: T => T): Cloning[T] = new Cloning[T] {
     def clone(x: T) = cl(x)
   }
 
   implicit object IntCloning extends Cloning[Int] {
     def clone(x: Int) = x
+  }
+
+  implicit object LongCloning extends Cloning[Long] {
+    def clone(x: Long) = x
+  }
+
+  implicit object ShortCloning extends Cloning[Short] {
+    def clone(x: Short) = x
+  }
+
+  implicit object ByteCloning extends Cloning[Byte] {
+    def clone(x: Byte) = x
+  }
+
+  implicit object CharCloning extends Cloning[Char] {
+    def clone(x: Char) = x
   }
 
   implicit object DoubleCloning extends Cloning[Double] {
@@ -45,5 +62,6 @@ object Cloning {
   implicit def SeqCloning[T](implicit cl: Cloning[T]): Cloning[Seq[T]] = new Cloning[Seq[T]] {
     def clone(xs: Seq[T]) = Seq(xs.map(cl.clone): _*)
   }
+
 
 }

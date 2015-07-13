@@ -19,4 +19,16 @@ package object fastloop {
 
   }
 
+  implicit class intWithXRangeOps(val l: Int) extends AnyVal {
+
+    /**
+     * Returns an optimized version of a range.
+     * When traversing through this optimized range, it will be rewritten
+     * as a while loop with the loop body inlined at compile time.
+     * @return An optimized range that will be rewritten by macros at compile time
+     */
+    def ??(r: Int) = new XRange(l until r)
+
+  }
+
 }

@@ -4,8 +4,9 @@ import poly.util.specgroup._
 
 /**
  * @author Tongfei Chen (ctongfei@gmail.com).
+ * @since 0.1.0
  */
-trait Formatter[@sp(fdib) T] {
+trait Formatter[@sp -T] {
 
   def str(x: T): String
 
@@ -13,11 +14,11 @@ trait Formatter[@sp(fdib) T] {
 
 object Formatter {
 
-  implicit def default[T]: Formatter[T] = new Formatter[T] {
+  implicit def default[@sp T]: Formatter[T] = new Formatter[T] {
     def str(x: T) = x.toString
   }
 
-  def create[T](f: T => String): Formatter[T] = new Formatter[T] {
+  def create[@sp T](f: T => String): Formatter[T] = new Formatter[T] {
     def str(x: T) = f(x)
   }
 
