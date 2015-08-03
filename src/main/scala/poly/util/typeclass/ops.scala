@@ -12,7 +12,7 @@ object ops {
     /**
      * Returns a string representation of this object. This is the typeclass-abstracted version of `toString`.
      * @param formatter An implicit formatter that specifies how to format this object into a string.
-     * @return A string representation
+     * @return A string representation of this object
      */
     def str(implicit formatter: Formatter[T]) = formatter.str(x)
 

@@ -11,8 +11,4 @@ package object conversion {
     def hash(x: X) = h.hash(x)
   }
 
-  implicit def scalaEquivToPoly[X](e: scala.math.Equiv[X]): Eq[X] = new Eq[X] {
-    def eq(x: X, y: X) = e.equiv(x, y)
-  }
-
 }
