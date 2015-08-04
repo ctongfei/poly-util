@@ -1,14 +1,14 @@
 name := "poly-util"
 
-version := "0.1.0-SNAPSHOT"
+version := "0.1.0"
 
 organization := "me.tongfei"
 
-scalaVersion := "2.11.6"
+scalaVersion := "2.11.7"
 
 libraryDependencies += "org.scala-lang" % "scala-reflect" % scalaVersion.value
 
-isSnapshot := true
+isSnapshot := false
 
 publishMavenStyle := true
 

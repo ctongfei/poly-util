@@ -4,11 +4,13 @@ import poly.util.specgroup._
 import scala.reflect._
 
 /**
+ * Represents a strategy for cloning (deep copying) an object.
  * @author Tongfei Chen (ctongfei@gmail.com).
  * @since 0.1.0
  */
 trait Cloning[@sp T] {
 
+  /** Returns a clone of the given object. */
   def clone(x: T): T
 
 }

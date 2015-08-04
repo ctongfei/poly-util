@@ -16,12 +16,15 @@ trait Hashing[@sp -X, @sp(i) +H] {
 
 object Hashing {
 
+  /** Retrieves the implicit [[poly.util.typeclass.Hashing]] object in the current scope. */
   def apply[X, H](implicit H: Hashing[X, H]) = H
 
+  /** Creates a `Hashing` object from the specific hash function. */
   def create[@sp X, H](fHash: X => H): Hashing[X, H] = new Hashing[X, H] {
     def hash(x: X): H = fHash(x)
   }
 
+  /** Creates a `Hashing` object from a type's inherent `hashCode`/`##` method. */
   implicit def default[@sp X]: Hashing[X, Int] = new Hashing[X, Int] {
     def hash(x: X) = x.##
   }

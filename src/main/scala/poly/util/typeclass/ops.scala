@@ -3,6 +3,8 @@ package poly.util.typeclass
 import scala.language.experimental.macros
 
 /**
+ * Enriches any object with formatting, hashing and cloning functions
+ * if proper typeclass instances are implicitly provided.
  * @author Tongfei Chen (ctongfei@gmail.com).
  */
 object ops {
@@ -27,12 +29,13 @@ object ops {
      */
     def deepCopy(implicit cloning: Cloning[T]) = cloning.clone(x)
 
+    /**
+     * Returns the hashed result of this object. This is the typeclass-abstracted version of `hashCode`/`##`.
+     * @param hashing An implicit hashing object that specifies how to hash this object.
+     * @return The hashed result
+     */
     def ###(implicit hashing: Hashing[T, Int]) = hashing.hash(x)
 
-    //region Implicit Cloning objects
-    //endregion
-
-    //region Implicit
   }
 
 }
