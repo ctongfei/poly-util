@@ -1,4 +1,4 @@
-package poly.util
+package poly.util.typeclass
 
 import poly.util.formatter._
 import poly.util.typeclass.ops._
@@ -17,6 +17,6 @@ object TypeclassTest extends App {
 
   val a = Seq(1, 2, 3, 4, 5)
   val b = Seq(1, 2, 3, 4, 5)
-
+  val c = a.deepCopy
 
 }
