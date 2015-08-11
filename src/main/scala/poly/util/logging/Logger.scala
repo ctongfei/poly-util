@@ -1,7 +1,7 @@
 package poly.util.logging
 
 /**
- * A simple logger that prints to the standard error stream [[java.lang.System.err]].
+ * A simple logger that prints to the standard error stream `java.lang.System.err`.
  * @author Tongfei Chen (ctongfei@gmail.com).
  */
 class Logger(val prefix: String) {
@@ -22,13 +22,13 @@ class Logger(val prefix: String) {
     if (errorEnabled) System.err.println(createLog(prefix, errorPrefix, msg))
 
   def warning(msg: String): Unit =
-    if (warningEnabled) System.err.print(createLog(prefix, warningPrefix, msg))
+    if (warningEnabled) System.err.println(createLog(prefix, warningPrefix, msg))
 
   def info(msg: String): Unit =
-    if (infoEnabled) System.err.print(createLog(prefix, infoPrefix, msg))
+    if (infoEnabled) System.err.println(createLog(prefix, infoPrefix, msg))
 
   def trace(msg: String): Unit =
-    if (traceEnabled) System.err.print(createLog(prefix, tracePrefix, msg))
+    if (traceEnabled) System.err.println(createLog(prefix, tracePrefix, msg))
 
 }
 

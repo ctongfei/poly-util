@@ -70,8 +70,8 @@ class ProgressBar(val task: String, val initialMax: Int, val length: Int = 25) e
   def start() = {
     startTime = LocalDateTime.now
     lastTime = LocalDateTime.now
-    forceShow(lastTime)
     logger.info(s"Task ($task) starts.")
+    forceShow(lastTime)
   }
 
   /**
