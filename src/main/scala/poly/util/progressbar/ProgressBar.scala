@@ -18,7 +18,6 @@ class ProgressBar(val task: String, val initialMax: Int, val length: Int = 25) e
   private[this] var startTime: LocalDateTime = null
   private[this] var lastTime: LocalDateTime = null
 
-
   private[this] def repeat(x: Char, n: Int): String = {
     new String(Array.fill[Char](n)(x))
   }

@@ -17,4 +17,5 @@ private[poly] object specgroup {
   final val fdib = new Specializable.Group((Int, Float, Double, Boolean))
   final val dib = new Specializable.Group((Int, Double, Boolean))
   final val ib = new Specializable.Group((Int, Boolean))
+  final val il = new Specializable.Group((Int, Long))
 }

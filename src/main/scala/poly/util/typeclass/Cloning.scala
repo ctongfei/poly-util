@@ -15,7 +15,7 @@ trait Cloning[@sp T] {
 
 }
 
-object Cloning {
+object Cloning extends ImplicitGetter[Cloning] {
 
   def create[@sp T](cl: T => T): Cloning[T] = new Cloning[T] {
     def clone(x: T) = cl(x)

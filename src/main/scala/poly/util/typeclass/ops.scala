@@ -1,7 +1,5 @@
 package poly.util.typeclass
 
-import scala.language.experimental.macros
-
 /**
  * Enriches any object with formatting, hashing and cloning functions
  * if proper typeclass instances are implicitly provided.

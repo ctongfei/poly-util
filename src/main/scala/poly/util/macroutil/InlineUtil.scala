@@ -1,4 +1,4 @@
-package poly.util.fastloop
+package poly.util.macroutil
 
 import scala.reflect.macros.blackbox._
 

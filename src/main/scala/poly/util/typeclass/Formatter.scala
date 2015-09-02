@@ -14,7 +14,7 @@ trait Formatter[@sp -T] {
 
 }
 
-object Formatter {
+object Formatter extends ImplicitGetter[Formatter] {
 
   /** Creates a default instance of a `Formatter` by calling the inherent `toString` method. */
   implicit def default[@sp T]: Formatter[T] = new Formatter[T] {

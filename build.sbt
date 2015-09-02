@@ -1,6 +1,6 @@
 name := "poly-util"
 
-version := "0.2.1-SNAPSHOT"
+version := "0.2.3-SNAPSHOT"
 
 isSnapshot := true
 
@@ -9,6 +9,9 @@ organization := "me.tongfei"
 scalaVersion := "2.11.7"
 
 libraryDependencies += "org.scala-lang" % "scala-reflect" % scalaVersion.value
+
+libraryDependencies += "com.storm-enroute" %% "scalameter-core" % "0.7" % Test
+
 
 publishMavenStyle := true
 

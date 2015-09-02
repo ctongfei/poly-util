@@ -15,8 +15,8 @@ object dsl {
 
     def <(j: Instant) = i.isBefore(j)
     def >(j: Instant) = i.isAfter(j)
-    def <=(j: Instant) = i.isBefore(j) | i.equals(j)
-    def >=(j: Instant) = i.isAfter(j) | i.equals(j)
+    def <=(j: Instant) = i.isBefore(j) || i.equals(j)
+    def >=(j: Instant) = i.isAfter(j) || i.equals(j)
   }
 
   implicit class RichDuration(val d: Duration) extends AnyVal {

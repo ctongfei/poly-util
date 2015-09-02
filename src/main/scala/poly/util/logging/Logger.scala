@@ -8,11 +8,6 @@ class Logger(val prefix: String) {
 
   import Logger._
 
-  var errorEnabled = true
-  var warningEnabled = true
-  var infoEnabled = true
-  var traceEnabled = true
-
   @inline private[this] def createLog(prefix: String, typePrefix: String, msg: String) = {
     val timestamp = java.time.LocalDateTime.now()
     s"$timestamp\t[$prefix] $typePrefix $msg"
@@ -33,6 +28,11 @@ class Logger(val prefix: String) {
 }
 
 object Logger {
+
+  var errorEnabled = true
+  var warningEnabled = true
+  var infoEnabled = true
+  var traceEnabled = true
 
   final val errorPrefix = "ERROR:"
   final val warningPrefix = "WARNING:"
