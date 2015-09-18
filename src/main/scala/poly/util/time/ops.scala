@@ -6,7 +6,7 @@ import java.time.temporal._
 /**
  * @author Tongfei Chen (ctongfei@gmail.com).
  */
-object dsl {
+object ops {
 
   implicit class RichInstant(val i: Instant) extends AnyVal {
     def +(d: TemporalAmount) = i.plus(d)

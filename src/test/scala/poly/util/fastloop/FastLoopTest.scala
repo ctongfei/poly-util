@@ -9,7 +9,7 @@ import org.scalameter._
 object FastLoopTest extends App {
 
 
-  for (n ← Seq(500, 1000, 2000, 4000, 8000, 16000)) {
+  for (n ← Seq(100, 200, 400, 800, 1600)) {
 
     val conf = config(Key.exec.benchRuns → 25)
       .withWarmer(new Warmer.Default).withMeasurer(new Measurer.IgnoringGC)
@@ -63,5 +63,7 @@ object FastLoopTest extends App {
 
     println()
   }
+
+
 
 }

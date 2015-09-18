@@ -56,7 +56,7 @@ object FastLoop {
       var $limit = $b
       while ($i > $limit) {
         $f($i)
-        $i -= $step
+        $i += $step
       }
     """
     new InlineUtil[c.type](c).inlineAndReset[Unit](tree)

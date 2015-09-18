@@ -1,8 +1,8 @@
 name := "poly-util"
 
-version := "0.2.3-SNAPSHOT"
+version := "0.2.4"
 
-isSnapshot := true
+isSnapshot := false
 
 organization := "me.tongfei"
 
